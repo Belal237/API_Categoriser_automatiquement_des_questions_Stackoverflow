@@ -27,5 +27,5 @@ Il était demandé de réaliser:
 - Heroku
 
 # Liens vers l'API:
-- [Documentation OpenApi de l'API](https://stackoverflow-tag-api.herokuapp.com/docs)
+- [Documentation OpenApi de l'API]()
 - [Endpoint permettant de réaliser la rédiction de tags]()
