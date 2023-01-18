@@ -15,7 +15,9 @@ Il était demandé de réaliser:
 - Développer une API et la mettre en production
 
 # Contenu du repositiry:
-- Le code de l'API
+- Models : Ce dossier contient l'ensembles modèles entrainé dans le [repository](https://github.com/Belal237/Categoriser_automatiquement_des_questions_Stackoverflow), il contient les modèles supervisés (OneVsRestClassifier avec différents estimateur : Régression Logistique et le RandomForest) entrainés sur des vecteurs obtenu à partir de la base de donnée des texte transformé via (TF-IDF, ou Word2Vec ou BERT ou USE) ainsi que les modèles non supervisés.
+- Variables : contient les variables et le dictionnaires des mots pour l'application des modèles
+- App : Ensemble des fonctions qui permettent de pouvoir executer l'API, ainsi que l'API.
 
 # Stack technique:
 - Python
