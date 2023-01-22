@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from functions import transform_texte, SupervisedModel, UnsupervisedModel
+from .functions import transform_texte, SupervisedModel, UnsupervisedModel
 
 app = FastAPI(
     title='Application de prediction de Tags',
