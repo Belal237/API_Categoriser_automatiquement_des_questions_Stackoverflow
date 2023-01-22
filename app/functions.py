@@ -18,7 +18,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 # Data Persistence
 import joblib
-import tensorflow_hub as hub
+# import tensorflow_hub as hub
 
 
 def remove_html_syntax(x):
@@ -126,18 +126,18 @@ def transform_texte(nlp, corpus, pos_list):
     test_cleaned = ' '.join(lem_w)
     return test_cleaned
 
-def vectorisation_USE(sentences):
-    batch_size = 10
-    embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
-    for step in range(len(sentences) // batch_size + 1):
-        idx = step * batch_size
-        feat = embed(sentences[idx: idx + batch_size])
+# def vectorisation_USE(sentences):
+#     batch_size = 10
+#     embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+#     for step in range(len(sentences) // batch_size + 1):
+#         idx = step * batch_size
+#         feat = embed(sentences[idx: idx + batch_size])
 
-        if step == 0:
-            feature = feat
-        else:
-            feature = np.concatenate((feature, feat))
-    return feature
+#         if step == 0:
+#             feature = feat
+#         else:
+#             feature = np.concatenate((feature, feat))
+#     return feature
 
 
 class SupervisedModel:
@@ -145,12 +145,12 @@ class SupervisedModel:
     # Definition et appel des models deja entrainé
     def __init__(self):
         filename_supervised_model_tfidf = "./Models/model_tfidf_lr.joblib"
-        filename_supervised_model_use = "./Models/model_use_lr.joblib"
+        #filename_supervised_model_use = "./Models/model_use_lr.joblib"
         filename_mlb_model = "./Models/multilabel.joblib"
         filename_tfidf_vectorizer = "./Models/tfidf_vectorizer.joblib"
 
         self.supervised_model_tfidf = joblib.load(open(filename_supervised_model_tfidf, 'rb'))
-        self.supervised_model_use = joblib.load(open(filename_supervised_model_use, 'rb'))
+        #self.supervised_model_use = joblib.load(open(filename_supervised_model_use, 'rb'))
         self.mlb_model = joblib.load(open(filename_mlb_model, 'rb'))
         self.tfidf_vectorizer = joblib.load(open(filename_tfidf_vectorizer, 'rb'))
 
