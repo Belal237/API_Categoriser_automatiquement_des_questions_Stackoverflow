@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 
 # Librairie nltk pour traiter les mots
 import numpy as np
+import pandas as pd
 import re
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -167,11 +168,12 @@ class SupervisedModel:
             tags(list): Liste des tags predits par le model
         """
         text_list = [text]
-        vectorisation = self.tfidf_vectorizer.transform(text)
+        vectorisation = self.tfidf_vectorizer.transform(text_list)
         #vectorisation = vectorisation_USE(text_list)
         input_vector = pd.DataFrame(vectorisation.toarray(), columns=self.tfidf_vectorizer.get_feature_names_out())
         #input_vector = vectorisation.numpy()
-        res = self.supervised_model_use.predict(input_vector)
+        #res = self.supervised_model_use.predict(input_vector)
+        res = self.supervised_model_tfidf.predict(input_vector)
         res = self.mlb_model.inverse_transform(res)
         tag = list({tag for tag_list in res for tag in tag_list if (len(tag_list) != 0)})
         return tag
