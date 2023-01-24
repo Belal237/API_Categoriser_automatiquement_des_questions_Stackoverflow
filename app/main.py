@@ -47,5 +47,3 @@ async def get_prediction(data: Input):
                                  "Tags with Unsupervised Model ": unsupervised_pred})
 
 
-if __name__ == "__main__":
-    uvicorn.run(debug=True, host='127.0.0.1', port=5000)
