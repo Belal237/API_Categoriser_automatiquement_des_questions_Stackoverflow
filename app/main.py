@@ -48,4 +48,4 @@ async def get_prediction(data: Input):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    uvicorn.run(debug=True, host='127.0.0.1', port=5000)
