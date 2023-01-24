@@ -17,25 +17,19 @@ Il était demandé de réaliser:
 # Contenu du repositiry:
 - Models : Ce dossier contient l'ensembles modèles entrainé dans le [repository](https://github.com/Belal237/Categoriser_automatiquement_des_questions_Stackoverflow), il contient les modèles supervisés (OneVsRestClassifier avec différents estimateur : Régression Logistique et le RandomForest) entrainés sur des vecteurs obtenu à partir de la base de donnée des texte transformé via (TF-IDF, ou Word2Vec ou BERT ou USE) ainsi que les modèles non supervisés.
 - Variables : contient les variables et le dictionnaires des mots pour l'application des modèles
-<<<<<<< HEAD
 - app : Ensemble des fonctions qui permettent de pouvoir executer l'API, ainsi que l'API.
 - requirements : Ensemble des packages utilisés
 - runtime : version de python utilisé
-=======
-- App : Ensemble des fonctions qui permettent de pouvoir executer l'API, ainsi que l'API.
->>>>>>> 5ebab523f0d44591f8b92fdb9f765ae207c999aa
 
 # Stack technique:
 - Python
+- Pandas
+- Numpy
 - Spacy
 - FastAPI
 - Uvicorn
 - Heroku
 
 # Liens vers l'API:
-- [Documentation OpenApi de l'API]()
-<<<<<<< HEAD
-- [Endpoint permettant de réaliser la rédiction de tags]()
-=======
-- [Endpoint permettant de réaliser la rédiction de tags]()
->>>>>>> 5ebab523f0d44591f8b92fdb9f765ae207c999aa
+- [Documentation OpenApi de l'API](https://stackquestion-app.herokuapp.com/docs)
+- [Endpoint permettant de réaliser la prédiction de tags](https://stackquestion-app.herokuapp.com/docs#/default/get_prediction_predict_post)
